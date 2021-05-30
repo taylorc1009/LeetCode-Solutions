@@ -21,7 +21,9 @@ std::vector<int> twoSum(std::vector<int>& nums, int target) {
 }
 
 int main(int argc, char** argv) {
-    std::vector<int> result = twoSum({2, 7, 11, 15}, 9);
+    std::vector<int> numbers = {2, 7, 11, 15};
+    
+    std::vector<int> result = twoSum(numbers, 9);
     
     for (std::vector<int>::const_iterator it = result.begin(); it != result.end(); it++)
         std::cout << *it << ' ';
