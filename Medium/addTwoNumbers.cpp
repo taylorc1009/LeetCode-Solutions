@@ -42,6 +42,8 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
 int main(int argc, char **argv) {
     ListNode* l1 = nullptr;
     ListNode* l2 = nullptr;
+
+    //problem description states that the numbers are stored in reverse order, hence the reverse iterator below
     std::vector<int> num1 = { 2, 4, 3 };
     std::vector<int> num2 = { 5, 6, 4 };
 
@@ -61,6 +63,8 @@ int main(int argc, char **argv) {
     
     while (result != nullptr) {
         std::cout << result->val;
+        ListNode* tmp = result;
         result = result->next;
+        delete tmp;
     }
 }
