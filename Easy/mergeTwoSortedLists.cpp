@@ -71,6 +71,8 @@ int main(int argc, char** argv) {
     
     while (result != nullptr) {
         std::cout << result->val;
+        ListNode* tmp = result;
         result = result->next;
+        delete tmp;
     }
 }
