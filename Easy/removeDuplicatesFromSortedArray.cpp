@@ -2,20 +2,18 @@
 #include <iostream>
 
 int removeDuplicates(std::vector<int>& nums) {
-    int len = 0, cur = INT_MIN;
+    int cur = INT_MIN;
     
     for (std::vector<int>::iterator it = nums.begin(); it != nums.end(); it++) {
-        if (*it != cur) {
+        if (*it != cur)
             cur = *it;
-            len++;
-        }
         else {
             nums.erase(it);
             it--;
         }
     }
     
-    return len;
+    return nums.size();
 }
 
 int main(int argc, char** argv) {
