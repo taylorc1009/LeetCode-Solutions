@@ -19,9 +19,7 @@ int removeDuplicates(std::vector<int>& nums) {
 int main(int argc, char** argv) {
     std::vector<int> sortedNumbers = { 0, 0, 1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 4, 5 };
 
-    int length = removeDuplicates(sortedNumbers);
-
-    std::cout << length << '\n';
+    std::cout << removeDuplicates(sortedNumbers) << '\n';
     for (std::vector<int>::const_iterator it = sortedNumbers.begin(); it != sortedNumbers.end(); it++)
         std::cout << *it << ' ';
 }
