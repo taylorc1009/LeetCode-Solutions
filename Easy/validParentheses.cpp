@@ -21,9 +21,7 @@ bool isValid(std::string s) {
             return false;
     }
 
-    if (!parentheses.empty())
-        return false;
-    return true;
+    return parentheses.empty();
 }
 
 int main(int argc, char** argv) {
