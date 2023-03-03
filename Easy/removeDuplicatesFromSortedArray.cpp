@@ -1,23 +1,6 @@
 #include <vector>
 #include <iostream>
 
-/*    ListNode* deleteDuplicates(ListNode* head) {
-    ListNode* node = head;
-    ListNode* lastKept = head;
-
-    while (node != nullptr) {
-        if (node->val == lastKept->val) {
-            lastKept->next = node = node->next;
-            continue;
-        }
-
-        lastKept = lastKept->next = node;
-        node = node->next;
-    }
-
-    return head;
-} */
-
 int removeDuplicates(std::vector<int>& nums) {
     int cur = INT_MIN;
     
