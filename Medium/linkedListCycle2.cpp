@@ -30,6 +30,13 @@ ListNode* detectCycle(ListNode* head) {
     return NULL;
 }
 
+void freeNode(ListNode* node, ListNode* cycle) {
+    if (node && node->next != cycle) {
+        freeNode(node->next, cycle);
+        free(node);
+    }
+}
+
 int main(int argc, char **argv) {
     ListNode* head = new ListNode(0);
     ListNode* tail = head;
@@ -42,4 +49,6 @@ int main(int argc, char **argv) {
         std::cout << "Cycle detected, beginning at index " + std::to_string(result->val);
     else
         std::cout << "No cycle detected";
+
+    freeNode(head, result);
 }
