@@ -14,7 +14,7 @@ double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2) 
             for (i; i < n; i++)
                 nums[i] = nums1[i1++];
         else
-            nums[i] = nums1[i1] < nums2[i2] ? nums[i] = nums1[i1++] : nums[i] = nums2[i2++];
+            nums[i] = nums1[i1] < nums2[i2] ? nums1[i1++] : nums2[i2++];
 
     return n % 2 ? nums[n / 2] : (nums[n / 2 - 1] + nums[n / 2]) / 2.0;
 }
