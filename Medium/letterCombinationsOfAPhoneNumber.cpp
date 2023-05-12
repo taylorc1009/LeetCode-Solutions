@@ -14,14 +14,12 @@ std::unordered_map<char, std::string> mappings = {
 };
 
 void combinationsHelper(std::string digits, std::string& combination, std::vector<std::string>& results) {
-    if (digits.empty()) {
+    if (!digits.empty())
+        for (char c : mappings[digits[0]])
+            combinationsHelper(digits.substr(1), combination += c, results);
+    else
         results.push_back(combination);
-        combination.pop_back();
-        return;
-    }
 
-    for (char c : mappings[digits[0]])
-        combinationsHelper(digits.substr(1), combination += c, results);
     combination.pop_back();
 }
 
