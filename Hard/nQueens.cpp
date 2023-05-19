@@ -12,7 +12,7 @@ std::vector<std::string> getSolutionString(const std::vector<int>& __restrict ga
     return solution;
 }
 
-bool boardIsValidSoFar(int lastPlacedRow, const std::vector<int>& __restrict gameBoard) {
+bool boardIsValidSoFar(const int lastPlacedRow, const std::vector<int>& __restrict gameBoard) {
     const int lastPlacedColumn = gameBoard[lastPlacedRow];
 
     for (int row = 0; row < lastPlacedRow; row++)
@@ -24,7 +24,7 @@ bool boardIsValidSoFar(int lastPlacedRow, const std::vector<int>& __restrict gam
     return true;
 }
 
-void calculateSolutionsRecursive(int writeToRow, std::vector<int>& __restrict gameBoard, int n, std::vector<std::vector<std::string>>& __restrict solutions) {
+void calculateSolutionsRecursive(const int writeToRow, std::vector<int>& __restrict gameBoard, const int n, std::vector<std::vector<std::string>>& __restrict solutions) {
     for (int i = 0; i < n; i++) {
         gameBoard[writeToRow] = i;
 
@@ -49,7 +49,7 @@ std::vector<std::vector<std::string>> solveNQueens(int n) {
 }
 
 int main(int argc, char** argv) {
-    int n = 4;
+    const int n = 4;
 
     std::vector<std::vector<std::string>> solutions = solveNQueens(n);
 
