@@ -51,6 +51,7 @@ int main(int argc, char** argv) {
         )
     );
 
+    invertTree(root);
     outputTree(root);
     freeNode(root);
 }
